@@ -245,7 +245,7 @@
 | **Jinja2** | 3.1.6 | Шаблонизация HTML | Web |
 | **CUDA** | 12.6 | GPU ускорение | Hardware |
 | **NVIDIA GPU** | Аппаратное ускорение | Hardware |
-
+---
 
 
 
