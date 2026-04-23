@@ -121,8 +121,10 @@ code
 ---
 
 ## Веб-интерфейс
-<img width="1106" height="485" alt="2" src="https://github.com/user-attachments/assets/d81bb088-8bd9-4baf-936e-526845147489" />
-<img width="1122" height="942" alt="1" src="https://github.com/user-attachments/assets/45f54e07-2b79-460d-a1fd-73d8b4e6f33b" />
+<img width="1122" height="942" alt="1" src="https://github.com/user-attachments/assets/347ec8c6-093b-4d1f-b24b-fd6fe49fb3b5" />
+<img width="1106" height="485" alt="2" src="https://github.com/user-attachments/assets/15c4b8e3-a43a-4a73-a5ea-4c7eb7d1fda1" />
+
+
 
 ### Как пользоваться
 
