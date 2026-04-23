@@ -60,21 +60,70 @@ tes-prediction/
 └── training_summary.csv # Сводная таблица результатов
 
 code
-Copy
+
 
 ---
 
 ## Быстрый старт
+Разумеется! Давайте оформим раздел "Быстрый старт" более аккуратно и читабельно с использованием списков и выделения важной информации:
 
-```bash
-# 1. Клонировать репозиторий
-git clone https://github.com/your-username/tes-prediction.git
-cd tes-prediction
+```markdown
+## Быстрый старт
 
-# 2. Создать и активировать виртуальное окружение
-python -m venv venv
-venv\Scripts\activate  # Windows
-# source venv/bin/activate  # Linux/Mac
+Следуйте этим шагам, чтобы развернуть проект на локальной машине:
 
-# 3. Установить зависимости
-pip install -r requirements.txt
+1. **Клонировать репозиторий**
+   ```bash
+   git clone https://github.com/your-username/tes-prediction.git
+   cd tes-prediction
+   ```
+
+2. **Создать и активировать виртуальное окружение**
+   ```bash
+   python -m venv venv
+   ```
+   - Для Windows:
+     ```bash
+     venv\Scripts\activate
+     ```
+   - Для Linux/Mac:
+     ```bash
+     source venv/bin/activate
+     ```
+
+3. **Установить зависимости**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Поместить данные в корень проекта**
+   - Переименуйте ваш файл данных в `temperature_data.csv` и поместите его в корень проекта:
+   ```bash
+   cp your_temperature_data.csv temperature_data.csv
+   ```
+
+5. **Обучить модели (Jupyter)**
+   - Запустите Jupyter Notebook:
+   ```bash
+   jupyter notebook full.ipynb
+   ```
+   - Выполните все ячейки по порядку.
+
+6. **Исправить нейросети для CPU**
+   ```bash
+   python fix_nn_models.py
+   ```
+
+7. **Запустить сервер**
+   ```bash
+   python main.py
+   ```
+
+8. **Открыть в браузере**
+   - Перейдите по следующему адресу: [http://localhost:8000](http://localhost:8000)
+```
+
+### Примечания:
+- Используйте выделение и форматирование, чтобы сделать инструкции более понятными.
+- Скобки `()` можно использовать для добавления ссылок на источники, а также можно добавить дополнительные поясняющие комментарии, если необходимо.
+- Если у вас есть другие предпочтения по стилю или нужно что-то изменить, дайте знать!
