@@ -121,6 +121,8 @@ code
 ---
 
 ## Веб-интерфейс
+<img width="1106" height="485" alt="2" src="https://github.com/user-attachments/assets/d81bb088-8bd9-4baf-936e-526845147489" />
+<img width="1122" height="942" alt="1" src="https://github.com/user-attachments/assets/45f54e07-2b79-460d-a1fd-73d8b4e6f33b" />
 
 ### Как пользоваться
 
