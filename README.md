@@ -41,6 +41,7 @@
 ---
 
 ## Структура проекта
+tes-prediction/
 ├── main.py # FastAPI сервер (запуск: python main.py)
 ├── full.ipynb # Jupyter ноутбук обучения ML+NN
 ├── fix_nn_models.py # Исправление нейросетей для CPU
