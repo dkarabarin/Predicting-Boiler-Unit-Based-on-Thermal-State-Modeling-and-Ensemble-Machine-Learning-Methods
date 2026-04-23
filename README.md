@@ -39,9 +39,9 @@
 **Результат:** Средний AUC на тесте 2018 года = **0.9546**, средний F1 = **0.9055**.
 
 ---
-
 ## Структура проекта
-│
+
+📁 tes-prediction/
 ├── 📄 main.py # FastAPI сервер (единая точка входа)
 ├── 📓 full.ipynb # Jupyter ноутбук обучения моделей
 ├── 🔧 fix_nn_models.py # Исправление нейросетей (GPU→CPU)
@@ -87,20 +87,7 @@
 │
 ├── 📊 temperature_data.csv # Исходные данные (5.7M записей)
 │
-└── 📂 venv/ # Виртуальное окружение Python
-├── Scripts/ # Исполняемые файлы
-│ ├── python.exe # Python 3.11.15
-│ ├── activate.bat # Активация (CMD)
-│ └── Activate.ps1 # Активация (PowerShell)
-└── Lib/ # Установленные пакеты
-└── site-packages/
-├── torch/ # PyTorch 2.11.0
-├── lightgbm/ # LightGBM 4.6.0
-├── xgboost/ # XGBoost 3.2.0
-├── sklearn/ # Scikit-learn 1.8.0
-├── fastapi/ # FastAPI 0.136.0
-├── pandas/ # Pandas 3.0.2
-└── numpy/ # NumPy 2.4.4
+└── 📂 venv/ # Вирту
 
 
 ---
