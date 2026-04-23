@@ -43,17 +43,17 @@
 ├── 🔧 fix_nn_models.py       # Исправление нейросетей (GPU→CPU)
 ├── 📋 requirements.txt       # Зависимости Python
 ├── 📂 trained_models_best/   # ОБУЧЕННЫЕ МОДЕЛИ (22 файла)
-├── 📂 src/ # ИСХОДНЫЙ КОД
-│ ├── 📄 init.py # Инициализация пакета
-│ ├── 📄 config.py # Конфигурация (SENSORS, константы)
-│ ├── 📄 features.py # FeatureCreator (признаки)
-│ ├── 📄 models_ml.py # ML модели с GridSearch
-│ ├── 📄 models_nn.py # Нейросетевые архитектуры
-│ ├── 📄 trainer_ml.py # Обучение ML моделей
-│ ├── 📄 trainer_nn.py # Обучение нейросетей
-│ └── 📄 predictor.py # Загрузка и прогнозирование
+├── 📂 src/                   # ИСХОДНЫЙ КОД
+│ ├── 📄 init.py              # Инициализация пакета
+│ ├── 📄 config.py            # Конфигурация (SENSORS, константы)
+│ ├── 📄 features.py          # FeatureCreator (признаки)
+│ ├── 📄 models_ml.py         # ML модели с GridSearch
+│ ├── 📄 models_nn.py         # Нейросетевые архитектуры
+│ ├── 📄 trainer_ml.py        # Обучение ML моделей
+│ ├── 📄 trainer_nn.py        # Обучение нейросетей
+│ └── 📄 predictor.py         # Загрузка и прогнозирование
 ├── 📂 uploads/               # Загрузки пользователей (runtime)
-│ └── *.csv                   # Временные файлы
+│ └── *.csv                    # Временные файлы
 ├── 📂 logs/                  # Логи сервера (runtime)
 │ └── service.log # Файл логов
 ├── 📊 temperature_data.csv   # Исходные данные (5.7M записей)
