@@ -42,18 +42,17 @@
 ## Структура проекта
 ```plaintext
 📁 tes-prediction/
-├── 📄 main.py # FastAPI сервер (единая точка входа)
-├── 📓 full.ipynb # Jupyter ноутбук обучения моделей
-├── 🔧 fix_nn_models.py # Исправление нейросетей (GPU→CPU)
-├── 📋 requirements.txt # Зависимости Python
-├── 📖 README.md # Документация проекта
-├── 📂 trained_models_best/ # ОБУЧЕННЫЕ МОДЕЛИ (22 файла)
-├── 📂 uploads/ # Загрузки пользователей (runtime)
-│ └── *.csv # Временные файлы
-├── 📂 logs/ # Логи сервера (runtime)
+├── 📄 main.py                # FastAPI сервер (единая точка входа)
+├── 📓 full.ipynb             # Jupyter ноутбук обучения моделей
+├── 🔧 fix_nn_models.py       # Исправление нейросетей (GPU→CPU)
+├── 📋 requirements.txt       # Зависимости Python
+├── 📂 trained_models_best/   # ОБУЧЕННЫЕ МОДЕЛИ (22 файла)
+├── 📂 uploads/               # Загрузки пользователей (runtime)
+│ └── *.csv                   # Временные файлы
+├── 📂 logs/                  # Логи сервера (runtime)
 │ └── service.log # Файл логов
-├── 📊 temperature_data.csv # Исходные данные (5.7M записей)
-└── README.md                # Документация
+├── 📊 temperature_data.csv   # Исходные данные (5.7M записей)
+└── README.md                  # Документация
 ```
 
 ## Быстрый старт
