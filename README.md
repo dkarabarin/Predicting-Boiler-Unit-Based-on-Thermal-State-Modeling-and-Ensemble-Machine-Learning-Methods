@@ -244,7 +244,7 @@
 | **tqdm** | 4.67.3 | Прогресс-бары | Utils |
 | **Jinja2** | 3.1.6 | Шаблонизация HTML | Web |
 | **CUDA** | 12.6 | GPU ускорение | Hardware |
-| **NVIDIA GPU** | Аппаратное ускорение | Hardware |
+| **NVIDIA GPU** |Видеокарта GTX | Аппаратное ускорение | Hardware |
 ---
 
 
