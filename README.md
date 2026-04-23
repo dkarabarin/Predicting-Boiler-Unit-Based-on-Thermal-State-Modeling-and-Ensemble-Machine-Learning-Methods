@@ -40,57 +40,21 @@
 
 ---
 ## Структура проекта
-
+```plaintext
 📁 tes-prediction/
 ├── 📄 main.py # FastAPI сервер (единая точка входа)
 ├── 📓 full.ipynb # Jupyter ноутбук обучения моделей
 ├── 🔧 fix_nn_models.py # Исправление нейросетей (GPU→CPU)
 ├── 📋 requirements.txt # Зависимости Python
 ├── 📖 README.md # Документация проекта
-│
 ├── 📂 trained_models_best/ # ОБУЧЕННЫЕ МОДЕЛИ (22 файла)
-│ │
-│ │ # === ML модели (*.pkl) ===
-│ ├── 🗂️ 10HAH01CT103.pkl # GradientBoosting | AUC: 0.8896
-│ ├── 🗂️ 10HAH01CT102.pkl # RandomForest | AUC: 0.9530
-│ ├── 🗂️ 10HAH12CT101.pkl # ExtraTrees | AUC: 0.9731
-│ ├── 🗂️ 10HAH12CT104.pkl # ExtraTrees | AUC: 0.9728
-│ ├── 🗂️ 10HAH12CT110.pkl # ExtraTrees | AUC: 0.9738
-│ ├── 🗂️ 10HAH12CT108.pkl # ExtraTrees | AUC: 0.9730
-│ ├── 🗂️ 10HAH12CT106.pkl # ExtraTrees | AUC: 0.9342
-│ ├── 🗂️ 10HAH11CT114.pkl # RandomForest | AUC: 0.9299
-│ ├── 🗂️ 10HAH11CT113.pkl # LogisticRegression | AUC: 0.9736
-│ ├── 🗂️ 10HAH12CT116.pkl # ExtraTrees | AUC: 0.9761
-│ ├── 🗂️ 10HAH12CT117.pkl # LightGBM | AUC: 0.9515
-│ │
-│ │ # === Нейросети (*n.pkl) ===
-│ ├── 🧠 10HAH01CT103n.pkl # WideDeepNet | AUC: 0.7919
-│ ├── 🧠 10HAH01CT102n.pkl # WideDeepNet | AUC: 0.9399
-│ ├── 🧠 10HAH12CT101n.pkl # WideDeepNet | AUC: 0.9546
-│ ├── 🧠 10HAH12CT104n.pkl # WideDeepNet | AUC: 0.9653
-│ ├── 🧠 10HAH12CT110n.pkl # WideDeepNet | AUC: 0.9651
-│ ├── 🧠 10HAH12CT108n.pkl # WideDeepNet | AUC: 0.9743
-│ ├── 🧠 10HAH12CT106n.pkl # SimpleDNN | AUC: 0.9383
-│ ├── 🧠 10HAH11CT114n.pkl # AttentionNet | AUC: 0.9559
-│ ├── 🧠 10HAH11CT113n.pkl # SimpleDNN | AUC: 0.9713
-│ ├── 🧠 10HAH12CT116n.pkl # WideDeepNet | AUC: 0.9499
-│ ├── 🧠 10HAH12CT117n.pkl # SimpleDNN | AUC: 0.9584
-│ │
-│ ├── 📊 training_summary.csv # Сводная таблица метрик
-│ └── 📊 training_results.json # Полные результаты (JSON)
-│
 ├── 📂 uploads/ # Загрузки пользователей (runtime)
 │ └── *.csv # Временные файлы
-│
 ├── 📂 logs/ # Логи сервера (runtime)
 │ └── service.log # Файл логов
-│
 ├── 📊 temperature_data.csv # Исходные данные (5.7M записей)
-│
-└── 📂 venv/ # Вирту
-
-
----
+└── README.md                # Документация
+```
 
 ## Быстрый старт
 
