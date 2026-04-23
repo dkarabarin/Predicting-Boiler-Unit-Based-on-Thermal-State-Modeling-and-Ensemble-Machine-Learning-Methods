@@ -41,3 +41,39 @@
 ---
 
 ## Структура проекта
+├── main.py # FastAPI сервер (запуск: python main.py)
+├── full.ipynb # Jupyter ноутбук обучения ML+NN
+├── fix_nn_models.py # Исправление нейросетей для CPU
+├── requirements.txt # Зависимости Python
+├── README.md # Документация
+├── temperature_data.csv # Исходные данные (5.7M записей)
+├── uploads/ # Загрузки пользователей
+├── logs/ # Логи сервера
+└── trained_models_best/ # Обученные модели (22 файла)
+├── 10HAH01CT103.pkl # ML модель (GradientBoosting, AUC=0.8896)
+├── 10HAH01CT103n.pkl # Нейросеть (WideDeepNet, AUC=0.7919)
+├── 10HAH01CT102.pkl # ML модель (RandomForest, AUC=0.9530)
+├── 10HAH01CT102n.pkl # Нейросеть (WideDeepNet, AUC=0.9399)
+├── ... # 11 ML + 11 NN = 22 модели
+├── training_results.json # Метрики всех моделей в JSON
+└── training_summary.csv # Сводная таблица результатов
+
+code
+Copy
+
+---
+
+## Быстрый старт
+
+```bash
+# 1. Клонировать репозиторий
+git clone https://github.com/your-username/tes-prediction.git
+cd tes-prediction
+
+# 2. Создать и активировать виртуальное окружение
+python -m venv venv
+venv\Scripts\activate  # Windows
+# source venv/bin/activate  # Linux/Mac
+
+# 3. Установить зависимости
+pip install -r requirements.txt
