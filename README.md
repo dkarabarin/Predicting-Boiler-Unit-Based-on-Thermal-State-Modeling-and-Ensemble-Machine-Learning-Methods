@@ -1,8 +1,8 @@
-# 🔥 Прогнозирование остановов оборудования ТЭС
+# 🔥 Прогнозирование вероятности работы котлоагрегата ТЭС
 
-[![Python](https://img.shields.io/badge/Python-3.11-blue)](https://www.python.org/) [![PyTorch](https://img.shields.io/badge/PyTorch-2.11-red)](https://pytorch.org/) [![FastAPI](https://img.shields.io/badge/FastAPI-0.136-green)](https://fastapi.tiangolo.com/) [![CUDA](https://img.shields.io/badge/CUDA-12.6-brightgreen)](https://developer.nvidia.com/cuda-toolkit) [![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
+[[![Python](https://img.shields.io/badge/Python-3.11-blue)](https://www.python.org/) [![PyTorch](https://img.shields.io/badge/PyTorch-2.11-red)](https://pytorch.org/) [![FastAPI](https://img.shields.io/badge/FastAPI-0.136-green)](https://fastapi.tiangolo.com/) [![CUDA](https://img.shields.io/badge/CUDA-12.6-brightgreen)](https://developer.nvidia.com/cuda-toolkit) [![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)](https://img.shields.io/badge/Python-3.11-blue https://img.shields.io/badge/PyTorch-2.11-red https://img.shields.io/badge/FastAPI-0.136-green https://img.shields.io/badge/CUDA-12.6-brightgreen https://img.shields.io/badge/License-MIT-yellow
 
-Система прогнозирования остановов котлоагрегата БКЗ-500-140 на основе температурных данных с использованием ML и нейросетей. Прогноз на 24 часа и до года вперед.
+Система прогнозирования вероятности безотказной работы котлоагрегата БКЗ-500-140 на основе температурных данных 11 датчиков. Прогноз на 24 часа и до года вперед. Автоматический выбор между 6 ML моделями и 3 нейросетевыми архитектурами для каждого датчика.
 
 ---
 
@@ -23,8 +23,9 @@
 
 **Решение:** 
 - 🚀 Обучение на GPU (RTX 3060, CUDA 12.6)
-- 🤖 6 ML моделей с GridSearch подбором гиперпараметров
-- 🧠 3 нейросетевые архитектуры (DNN, Wide&Deep, Attention)
+- 🤖  6 ML моделей с GridSearch (RF, LGBM, XGB, GB, LR, ET)
+- 🧠 3 нейросетевые архитектуры (SimpleDNN, Wide&DeepNet, AttentionNet)
+- 🔧 Физическая модель деградации металла (Ларсон-Миллер, износ, ремонты)
 - 📊 Автовыбор лучшей модели (ML или NN) для каждого датчика
 - 🌐 Веб-интерфейс на FastAPI с интерактивными графиками Plotly
 - 📁 Загрузка CSV через Drag & Drop
@@ -32,32 +33,28 @@
 
 **Данные:** 5,738,001 записей, 2013-2018 гг, 10-минутные интервалы, 11 датчиков температуры.
 
-**Результат:** Средний AUC на тесте 2018 года = **0.9546**, средний F1 = **0.9055**.
+**Результат:** Средний AUC на тесте 2018 года = 0.9546, средний F1 = 0.9055.
 
 ---
 ## Структура проекта
 ```plaintext
 📁 tes-prediction/
-├── 📄 main.py                # FastAPI сервер (единая точка входа)
-├── 📓 full.ipynb             # Jupyter ноутбук обучения моделей
-├── 🔧 fix_nn_models.py       # Исправление нейросетей (GPU→CPU)
-├── 📋 requirements.txt       # Зависимости Python
-├── 📂 trained_models_best/   # ОБУЧЕННЫЕ МОДЕЛИ (22 файла)
-├── 📂 src/                   # ИСХОДНЫЙ КОД
-│ ├── 📄 init.py              # Инициализация пакета
-│ ├── 📄 config.py            # Конфигурация (SENSORS, константы)
-│ ├── 📄 features.py          # FeatureCreator (признаки)
-│ ├── 📄 models_ml.py         # ML модели с GridSearch
-│ ├── 📄 models_nn.py         # Нейросетевые архитектуры
-│ ├── 📄 trainer_ml.py        # Обучение ML моделей
-│ ├── 📄 trainer_nn.py        # Обучение нейросетей
-│ └── 📄 predictor.py         # Загрузка и прогнозирование
-├── 📂 uploads/               # Загрузки пользователей (runtime)
-│ └── *.csv                    # Временные файлы
-├── 📂 logs/                  # Логи сервера (runtime)
-│ └── service.log # Файл логов
-├── 📊 temperature_data.csv   # Исходные данные (5.7M записей)
-└── README.md                  # Документация
+├── 📄 main.py                    # FastAPI сервер (единая точка входа)
+├── 📓 full.ipynb                 # Jupyter ноутбук полного цикла обучения
+├── 🔧 fix_nn_models.py           # Скрипт конвертации нейросетей GPU→CPU
+├── 📋 requirements.txt           # Зависимости Python
+├── 📂 trained_models_corrected/  # 22 обученные модели (11 ML + 11 NN)
+│   ├── 10HAH01CT103.pkl          # ML модель (GradientBoosting)
+│   ├── 10HAH01CT103n.pkl         # NN модель (WideDeepNet)
+│   └── ... (аналогично для других датчиков)
+├── 📂 src/                       # Исходный код (опционально)
+│   ├── config.py                 # Конфигурация (SENSORS, SURFACE_PARAMS)
+│   ├── features.py               # CorrectedFeatureCreator (сдвиг на 24ч)
+│   ├── models_ml.py              # 6 ML моделей с GridSearch
+│   ├── models_nn.py              # 3 нейросетевые архитектуры
+│   └── predictor.py              # Загрузка и прогнозирование
+├── 📊 temperature_data.csv       # Исходные данные (5.7M записей)
+└── README.md                     # Документация
 ```
 ## Быстрый старт
 
